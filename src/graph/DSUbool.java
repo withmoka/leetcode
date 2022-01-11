@@ -1,6 +1,6 @@
 package graph;
 
-public class DSUbool {
+class DSUbool {
     int[] parent;
 
     public DSUbool(int N) {

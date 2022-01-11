@@ -1,6 +1,9 @@
 package graph;
 
-public class DSU {
+import java.util.HashMap;
+import java.util.Map;
+
+class DSU {
     int[] parent;
 
     public DSU(int N) {
@@ -19,5 +22,19 @@ public class DSU {
 
     public void union(int x, int y) {
         parent[find(x)] = find(y);
+    }
+
+    public boolean isConnected(int x, int y) {
+        return find(x) == find(y);
+    }
+
+    public int numOfUnion() {
+        int num = 0;
+        for (int i = 0; i < parent.length; i++) {
+            if (parent[i] == i) {
+                num++;
+            }
+        }
+        return num;
     }
 }
